@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Casino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="casino-container">
+        <h1 class="title">Казино нашей любви❤️</h1>
+        <div class="slot-machine">
+            <div class="slots">
+                <div class="slot"><div class="slot-reel" id="reel1"></div></div>
+                <div class="slot"><div class="slot-reel" id="reel2"></div></div>
+                <div class="slot"><div class="slot-reel" id="reel3"></div></div>
+            </div>
+            <div class="lever" id="lever">
+                <div class="lever-stick"></div>
+                <div class="lever-ball"></div>
+            </div>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <!-- 🎶 Музыка и звуки -->
+    <audio id="bg-music" src="music.mp3" loop></audio>
+    <audio id="sfx-spin" src="spin.mp3"></audio>
+    <audio id="sfx-ding" src="ding.mp3"></audio>
+    <audio id="sfx-lever" src="lever.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

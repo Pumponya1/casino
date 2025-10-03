@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff4ecd, #6c5ce7);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.casino-container {
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.title {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+.slot-machine {
+    position: relative;
+    background: #2d2d2d;
+    border: 6px solid #ff4ecd;
+    border-radius: 25px;
+    padding: 35px 50px;
+    display: inline-block;
+    box-shadow: 0 0 40px rgba(0,0,0,0.7);
+}
+
+/* мигающие лампочки */
+.slot-machine::before {
+    content: "";
+    position: absolute;
+    top: -15px; left: -15px; right: -15px; bottom: -15px;
+    border-radius: 30px;
+    background: repeating-radial-gradient(circle, #ff4ecd 0 6px, transparent 7px 14px);
+    animation: blink 1.5s infinite alternate;
+    z-index: -1;
+}
+@keyframes blink {
+    0% { filter: hue-rotate(0deg) brightness(1); }
+    100% { filter: hue-rotate(180deg) brightness(1.5); }
+}
+
+.slots {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.slot {
+    width: 300px;
+    height: 220px;
+    background: white;
+    color: black;
+    font-size: 2.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.slot-reel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.slot-reel div {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.lever {
+    position: absolute;
+    top: 50%;
+    right: -90px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.lever-stick {
+    width: 18px;
+    height: 120px;
+    background: linear-gradient(180deg, #ccc, #555);
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.lever-ball {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 30% 30%, #ff4ecd, #c40082);
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: -12px;
+    box-shadow: 0 0 20px rgba(255,78,205,0.9);
+    transition: transform 0.2s;
+}
+
+.result {
+    margin-top: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(255,255,255,0.7);
+}
+
+/* частицы */
+.particle {
+    position: absolute;
+    bottom: 50px;
+    font-size: 1.5rem;
+    animation: floatUp 3s ease forwards;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-300px) scale(0.5); opacity: 0; }
+}
+
+/* тряска */
+.shake {
+    animation: shakeAnim 0.5s ease;
+}
+@keyframes shakeAnim {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
